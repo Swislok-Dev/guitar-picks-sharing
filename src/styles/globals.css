@@ -5,6 +5,8 @@
 :root {
   --bg-color: gray;
   --main-text-color: #fff;
+  --red-blue-gradient: rgba(251, 27, 27, 1) 0%, rgba(224, 126, 0, 1) 35%,
+    rgba(151, 173, 255, 1) 71%, rgba(152, 69, 252, 1) 100%;
   --font-strings: strings-theory, monospace;
   --font-guitar-hero: guitar-hero, monospace;
 }
@@ -20,19 +22,14 @@
 }
 
 body {
-  /* position: absolute; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url(https://cdn.shopify.com/s/files/1/0147/1256/9910/files/DanvilleMusicStore_DisplayRoom7979_Retouched.jpg?v=1658169027&width=1500);
+  background-attachment: fixed;
 }
 
 header {
   background: rgb(251, 27, 27);
-  background: linear-gradient(
-    90deg,
-    rgba(251, 27, 27, 1) 0%,
-    rgba(224, 126, 0, 1) 35%,
-    rgba(151, 173, 255, 1) 71%,
-    rgba(152, 69, 252, 1) 100%
-  );
+  background: linear-gradient(90deg, var(--red-blue-gradient));
 }
 
 header h1 {
@@ -49,20 +46,28 @@ nav button {
   border-radius: 2px;
 }
 
-img {
-  height: 40em;
-  width: 20em;
+nav h2,
+.showcase-add h3 {
+  background: rgb(251, 27, 27);
+  font-size: clamp(1em, 4vw, 1.5rem);
+  background: linear-gradient(45deg, var(--red-blue-gradient));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(-2px 2px #333);
+
+  font-family: var(--font-strings);
 }
 
-.showcase-add h3 {
-  font-family: var(--font-strings);
-  font-size: 26px;
+img {
+  height: 36em;
+  width: 18em;
 }
 
 .pick {
   height: 100px;
   width: 100px;
-  background-color: royalblue;
+  background-color: red;
   color: white;
   font-size: 18px;
   margin: 0 auto;
@@ -75,12 +80,12 @@ img {
   cursor: pointer;
 
   transform: rotate(45deg);
-  box-shadow: inset 5px 5px 2px -2px blue;
+  box-shadow: inset 5px 5px 2px -2px yellow;
 }
 
 .pick:hover {
   transform: rotate(360deg) translateY(-18px) rotate(45deg);
-  box-shadow: inset 5px 5px 3px blue, 8px 8px 8px gray;
+  box-shadow: inset 5px 5px 3px yellow, 8px 8px 8px gray;
   transition: all 1s ease;
 }
 
@@ -93,3 +98,26 @@ img {
   display: flex;
 }
 
+.guitar-item {
+  transition: all 500ms ease;
+  background: white;
+}
+
+.guitar-item:hover {
+  transform: translate(18px, -18px);
+  box-shadow: -18px 18px 10px rgb(25 25 25 / 0.6);
+}
+
+@media (hover: none) {
+  .guitar-item:hover {
+    transform: none;
+    transition: none;
+    box-shadow: none;
+  }
+  .pick,
+  .pick:hover {
+    transition: none;
+    box-shadow: none;
+    transform: rotate(45deg);
+  }
+}
