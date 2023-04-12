@@ -19,7 +19,7 @@ export default function Home() {
             </span>
         </div>
       </div>
-      <div className="flex flex-wrap justify-around">
+      <div className="my-20 flex flex-wrap justify-around gap-4">
         <GuitarItem imageUrl={exampleImage1} />
         <GuitarItem imageUrl={exampleImage2} />
         <GuitarItem imageUrl={exampleImage3} />

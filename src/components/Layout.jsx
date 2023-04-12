@@ -9,15 +9,13 @@ function Layout({ children }) {
         <title>Guitar Picks</title>
         <meta name="description" content="photo sharing site" />
       </Head>
-      <header className="z-10 top-0 flex justify-between p-8 items-center sticky bg-gray-400">
+      <header className="z-10 top-0 flex justify-between p-6 items-center sticky bg-gray-400">
         <Link href="/">
           <h1>Guitar Picks</h1>
         </Link>
         <nav className="">
           <Link href="#">
-            <button>
-              <h2 className="text-xl">Account</h2>
-            </button>
+              <h2>Account</h2>
           </Link>
         </nav>
       </header>
