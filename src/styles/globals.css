@@ -23,12 +23,17 @@
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.bg {
   background-image: url(https://cdn.shopify.com/s/files/1/0147/1256/9910/files/DanvilleMusicStore_DisplayRoom7979_Retouched.jpg?v=1658169027&width=1500);
-  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: -1;
 }
 
 header {

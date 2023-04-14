@@ -19,7 +19,7 @@ function Layout({ children }) {
           </Link>
         </nav>
       </header>
-
+      <div className="bg"></div>
       <main>{children}</main>
     </>
   );
