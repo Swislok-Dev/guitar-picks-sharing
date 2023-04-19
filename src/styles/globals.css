@@ -53,12 +53,7 @@ header h1 {
   text-shadow: -2px 2px black;
 }
 
-nav button {
-  background-color: white;
-  padding: 1rem;
-  width: calc(100% + 5px);
-  border-radius: 2px;
-}
+
 
 nav h2 {
   background: rgb(251, 27, 27);
@@ -70,6 +65,72 @@ nav h2 {
   filter: drop-shadow(-2px 2px #333);
   font-family: var(--font-strings);
 }
+
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+
+.modal-content {
+  width: 0;
+  height: 75%;
+  max-width: 800px;
+  background-color: #fff;
+  scale: 0;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal.show .modal-content {
+  width: 80%;
+  scale: 1;
+}
+
+.modal-content::after {
+  width: 0;
+}
+
+.modal-header {
+  border-bottom: 1px solid #eee;
+
+}
+
+.modal-body {
+  padding: 10px;
+}
+
+.modal-footer {
+  border-top: 1px solid #eee;
+}
+
+
+.modal-header,
+.modal-footer {
+  padding: 10px;
+  min-width: 100%;
+  text-align: center;
+}
+
 
 .showcase-add h3 {
   background: rgb(249, 0, 0);
