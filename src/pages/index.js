@@ -1,7 +1,15 @@
+import React from 'react';
 import GuitarItem from '../components/GuitarItem';
 import Layout from '../components/Layout';
+import Modal from '../components/Modal';
+import AddGuitarForm from '@/components/guitar/AddGuitarForm';
 
 export default function Home() {
+  const [show, setShow] = React.useState(false);
+
+  const onClose = () => {
+    setShow(false)
+  }
   const exampleImage1 =
     'https://m.media-amazon.com/images/I/71ZlrIEmxOL._AC_SY879_.jpg';
   const exampleImage2 =
@@ -13,10 +21,8 @@ export default function Home() {
     <Layout>
       <div className="showcase-add flex flex-col justify-center text-center my-8 gap-4 m-auto">
         <h3>Add a guitar</h3>
-        <div className="pick">
-          <span className="text">
-            &#43;
-            </span>
+        <div onClick={() => setShow(true)} className="pick">
+          <span className="text">&#43;</span>
         </div>
       </div>
       <div className="my-20 flex flex-wrap justify-around gap-4">
@@ -24,6 +30,12 @@ export default function Home() {
         <GuitarItem imageUrl={exampleImage2} />
         <GuitarItem imageUrl={exampleImage3} />
       </div>
+      <Modal
+        title="Add a guitar"
+        show={show}
+        onClose={() => onClose()}
+        content={<AddGuitarForm onClose={onClose}/>}
+      />
     </Layout>
   );
 }

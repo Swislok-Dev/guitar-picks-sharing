@@ -13,13 +13,18 @@ function Modal(props) {
   useEffect(() => {
     document.body.addEventListener('keydown', closeOnEscapeKeyDown);
     document.body.addEventListener('click', (e) => {
-      console.log(e);
-      if (e.target.className == 'modal show' || e.target.value == "Close") {
+      if (
+        e.target.className == 'modal show' ||
+        e.target.value == 'Close'
+      ) {
         onClose();
       }
     });
     return function cleanup() {
-      document.body.removeEventListener('keydown', closeOnEscapeKeyDown);
+      document.body.removeEventListener(
+        'keydown',
+        closeOnEscapeKeyDown
+      );
     };
   }, [closeOnEscapeKeyDown, onClose]);
 
@@ -27,12 +32,14 @@ function Modal(props) {
     <div className={`modal ${props.show ? 'show' : ''}`}>
       <div className="modal-content">
         <div className="modal-header">
-          <h4 className="modal-title">{props.title}</h4>
+          <h4 className="modal-title">
+            {props.title}
+          </h4>
+            <button className="button" onClick={onClose}>
+              &times;
+            </button>
         </div>
         <div className="modal-body">{props.content}</div>
-        <div className="modal-footer">
-          <button className="button" onClick={onClose}>Close</button>
-        </div>
       </div>
     </div>
   );
