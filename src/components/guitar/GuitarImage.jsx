@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-function GuitarImage({ imageUrl }) {
+function GuitarImage({alt, imageUrl }) {
   const myLoader = () => {
     return `${imageUrl}?w=500&q=75`;
   };
@@ -14,7 +14,7 @@ function GuitarImage({ imageUrl }) {
         height={800}
         className=" object-scale-down cursor-pointer"
         src={imageUrl}
-        alt="guitar photo"
+        alt={alt}
       />
     </>
   );
