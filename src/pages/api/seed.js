@@ -13,7 +13,6 @@ const handler = async (req, res) => {
   const guitars = await Guitar.find({});
   await db.disconnect();
   res.send({
-    user,
     message: 'Users and Guitars seeded successfully',
     users,
     guitars,
