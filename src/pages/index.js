@@ -22,7 +22,7 @@ export default function Home({ guitars }) {
       </div>
       <div className="my-20 flex flex-wrap justify-around gap-4">
         {guitars.map((guitar) => (
-          <GuitarItem guitar={guitar} key={guitar.id} />
+          <GuitarItem guitar={guitar} key={guitar._id} />
         ))}
       </div>
       <Modal
